@@ -155,6 +155,13 @@ SELECT MIN(salary) from employees;
 SELECT MAX(salary) from employees;
 ```
 ---
+## 6. Group By
+- ### Group By:
+```bash
+SELECT dept, COUNT(emp_id) from employees GROUP BY dept;
+SELECT dept, SUM(salary) from employees GROUP BY dept;
+```
+---
 
 
 
