@@ -162,6 +162,84 @@ SELECT dept, COUNT(emp_id) from employees GROUP BY dept;
 SELECT dept, SUM(salary) from employees GROUP BY dept;
 ```
 ---
+## 7. String Functions
+- ### CONCAT, CONCAT_WS:
+```bash
+SELECT emp_id, CONCAT(fname,lname) As Fullname, dept FROM employees;
+SELECT emp_id, CONCAT_WS(' ', fname, lname) AS Fullname, dept FROM employees;
+```
+- ### SUBSTR:
+```bash
+SELECT SUBSTR('Hello Buddy!', 1,5);
+SELECT SUBSTR(fname, 1,3) FROM employees;
+```
+- ### REPLACE:
+```bash
+SELECT REPLACE(dept, 'IT', 'TECH') from employees;
+```
+- ### REVERSE:
+```bash
+SELECT REVERSE(fname) from employees;
+```
+- ### LENGTH:
+```bash
+SELECT LENGTH(dept) FROM employees;
+SELECT * FROM employees WHERE LENGTH(fname) > 5;
+```
+- ### UPPER:
+```bash
+SELECT UPPER(fname) FROM employees;
+```
+- ### LENGTH:
+```bash
+SELECT LOWER(fname) FROM employees;
+```
+- ### LEFT:
+```bash
+SELECT LEFT('Hello World', 4);  -> Hell
+```
+- ### RIGHT:
+```bash
+SELECT RIGHT('Hello World', 4);  -> orld
+```
+- ### TRIM:
+```bash
+SELECT LENGHT(TRIM('   Hello World   '));  -> Avoid Spaces
+```
+- ### POSITION:
+```bash
+SELECT POSITION('om' in 'Thomas');  -> Check position- here 3
+```
+---
+## 7. Alter Table
+- ### ADD:
+```bash
+ALTER TABLE person ADD COLUMN age INT;
+```
+- ### DROP:
+```bash
+ALTER TABLE person DROP COLUMN age;
+```
+- ### RENAME:
+```bash
+ALTER TABLE person RENAME COLUMN name TO fname;
+```
+- ### Modified Table:
+```bash
+ALTER TABLE person
+ALTER COLUMN fname
+SET DATA TYPE VARCHAR(150);  -> Chaange fname column datatpye value VARCHAR(100) TO VARCHAR(150)
+```
+- ### CASE:
+```bash
+SELECT fname, salary,
+CASE
+    WHEN salary >=50000 THEN 'High'
+    ELSE 'Low'
+END AS Sal_cal
+FROM employees;
+```
+---
 
 
 
